@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darazna Mobile App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar__left">
+                <a href="#hero" class="brand" aria-label="Beranda Darazna App">
+                    <img src="img/logoDARAZNA.png" alt="Logo Darazna" class="brand__logo" />
+                </a>
+            </div>
+            <nav class="navbar__nav" aria-label="Navigasi utama">
+                <ul class="nav__links">
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#fitur">Fitur</a></li>
+                    <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+            </nav>
+            <div class="navbar__social" aria-label="Media sosial">
+                <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:info@darazna.id" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <button class="navbar__toggle" id="navbarToggle" aria-label="Buka menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero__sentinel" id="heroSentinel" aria-hidden="true"></div>
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <p class="hero__badge">Aplikasi Kajian Islam</p>
+                        <h1 class="hero__title">Darazna Mobile App<br><span class="hero__highlight" id="heroHighlight" data-phrases="DI SEKITAR ANDA|KAJIAN ISLAM|TEMUKAN &amp; HADIRI">DI SEKITAR ANDA</span></h1>
+                        <p class="hero__subtitle">Media informasi berbagai majelis ilmu syar'i di sekitar Anda, hanya dalam satu aplikasi. Mau? Download sekarang!</p>
+                        <div class="hero__actions">
+                            <a href="#download" class="btn btn--primary">Download Sekarang Juga!</a>
+                            <a href="#fitur" class="btn btn--ghost">Pelajari Fitur</a>
+                        </div>
+                    </div>
+                    <div class="hero__visual merged" id="heroVisual">
+                        <div class="hero__image-frame">
+                            <img src="img/logohero3hp.png" alt="Tampilan Aplikasi Darazna" class="hero__image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="fitur">
+            <div class="container">
+                <header class="features__header">
+                    <h2 class="section-title">Berbagai fitur bermanfaat untuk Anda</h2>
+                    <p class="section-subtitle">Temukan berbagai fitur yang akan terus dikembangkan pada aplikasi ini!</p>
+                </header>
+
+                <nav class="features__tabs" role="tablist" aria-label="Fitur aplikasi Darazna">
+                    <button class="features__tab is-active" role="tab" id="tab-beranda" aria-controls="panel-beranda" aria-selected="true" tabindex="0" data-feature-tab="beranda">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Beranda</span>
+                    </button>
+                    <button class="features__tab" role="tab" id="tab-agenda" aria-controls="panel-agenda" aria-selected="false" tabindex="-1" data-feature-tab="agenda">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span>Agenda</span>
+                    </button>
+                    <button class="features__tab" role="tab" id="tab-favorit" aria-controls="panel-favorit" aria-selected="false" tabindex="-1" data-feature-tab="favorit">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <span>Favorit</span>
+                    </button>
+                    <button class="features__tab" role="tab" id="tab-notifikasi" aria-controls="panel-notifikasi" aria-selected="false" tabindex="-1" data-feature-tab="notifikasi">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Notifikasi</span>
+                    </button>
+                    <button class="features__tab" role="tab" id="tab-akun" aria-controls="panel-akun" aria-selected="false" tabindex="-1" data-feature-tab="akun">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Akun</span>
+                    </button>
+                </nav>
+
+                <div class="features__panels">
+                    <div class="features__panel is-active" role="tabpanel" id="panel-beranda" aria-labelledby="tab-beranda" data-feature-panel="beranda">
+                        <div class="features__layout features__layout--tri">
+                            <div class="features__column">
+                                <div class="features__item">
+                                    <span class="features__icon"><i class="fa-solid fa-calendar-days"></i></span>
+                                    <div class="features__item-text">
+                                        <h3>Jadwal Kajian</h3>
+                                        <p>Daftar jadwal kajian terdekat dengan lokasi Anda berada.</p>
+                                    </div>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__icon"><i class="fa-solid fa-location-crosshairs"></i></span>
+                                    <div class="features__item-text">
+                                        <h3>Lokasi Terdekat</h3>
+                                        <p>Informasi lokasi majelis ilmu lengkap dengan peta interaktif.</p>
+                                    </div>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__icon"><i class="fa-solid fa-user-graduate"></i></span>
+                                    <div class="features__item-text">
+                                        <h3>Jadwal Asatidz</h3>
+                                        <p>Kumpulan jadwal kajian berdasarkan nama dan profil ustadz.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <figure class="features__visual">
+                                <img src="img/sshp1.jpg" alt="Tampilan beranda aplikasi Darazna" loading="lazy" />
+                            </figure>
+
+                            <div class="features__column">
+                                <div class="features__item">
+                                    <span class="features__icon"><i class="fa-solid fa-map-location-dot"></i></span>
+                                    <div class="features__item-text">
+                                        <h3>Jadwal Lokasi &amp; Kota</h3>
+                                        <p>Pencarian jadwal berdasarkan kota, kecamatan, atau masjid.</p>
+                                    </div>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__icon"><i class="fa-solid fa-calendar-day"></i></span>
+                                    <div class="features__item-text">
+                                        <h3>Hari Ini &amp; Besok</h3>
+                                        <p>Filter cepat untuk melihat agenda kajian hari ini atau besok.</p>
+                                    </div>
+                                </div>
+                                <div class="features__item">
+                                    <span class="features__icon"><i class="fa-solid fa-ellipsis"></i></span>
+                                    <div class="features__item-text">
+                                        <h3>Lainnya</h3>
+                                        <p>Informasi tambahan seperti materi kajian, taklim akhwat, dan lainnya.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features__panel" role="tabpanel" id="panel-agenda" aria-labelledby="tab-agenda" hidden data-feature-panel="agenda">
+                        <div class="features__layout features__layout--split">
+                            <figure class="features__visual">
+                                <img src="img/sshp2.jpg" alt="Agenda kajian pada aplikasi Darazna" loading="lazy" />
+                            </figure>
+                            <div class="features__details">
+                                <h3 class="features__headline">Beri Alarm &amp; Agendakan Jadwal Kajian</h3>
+                                <div class="features__grid">
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-bell"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Beri Alarm</h4>
+                                            <p>Atur alarm pengingat untuk setiap kajian yang ingin Anda hadiri.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-bookmark"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Simpan ke Agenda</h4>
+                                            <p>Tambahkan jadwal pilihan ke agenda pribadi agar mudah dilacak.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-calendar"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Tampilan Kalender</h4>
+                                            <p>Nikmati tampilan kalender harian, mingguan, hingga bulanan.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Sistem Pengingat</h4>
+                                            <p>Notifikasi otomatis jika ada perubahan jadwal atau pembicara.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features__panel" role="tabpanel" id="panel-favorit" aria-labelledby="tab-favorit" hidden data-feature-panel="favorit">
+                        <div class="features__layout features__layout--split features__layout--reverse">
+                            <div class="features__details">
+                                <h3 class="features__headline">Koleksi Kajian Favorit Anda</h3>
+                                <div class="features__grid">
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-heart"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Simpan Taklim</h4>
+                                            <p>Tandai kajian favorit agar mudah diakses kapan pun dibutuhkan.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-share-nodes"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Bagikan ke Teman</h4>
+                                            <p>Bagikan daftar favorit ke sahabat tanpa perlu menyalin manual.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-layer-group"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Kelompokkan Kajian</h4>
+                                            <p>Buat kategori favorit sesuai topik: fiqih, akidah, keluarga, dan lainnya.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-cloud-arrow-down"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Akses Offline</h4>
+                                            <p>Simpan catatan ringkas agar tetap tersedia meski tanpa koneksi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="features__visual">
+                                <img src="img/sshp3.jpg" alt="Tampilan fitur favorit pada aplikasi Darazna" loading="lazy" />
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="features__panel" role="tabpanel" id="panel-notifikasi" aria-labelledby="tab-notifikasi" hidden data-feature-panel="notifikasi">
+                        <div class="features__layout features__layout--split">
+                            <figure class="features__visual">
+                                <img src="img/sshp4.jpg" alt="Notifikasi aplikasi Darazna" loading="lazy" />
+                            </figure>
+                            <div class="features__details">
+                                <h3 class="features__headline">Notifikasi Real-time yang Relevan</h3>
+                                <div class="features__grid">
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-tower-broadcast"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Pemberitahuan Langsung</h4>
+                                            <p>Terima kabar terbaru saat kajian favorit Anda akan dimulai.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Peringatan Perubahan</h4>
+                                            <p>Ketahui jika ada perubahan lokasi, jadwal, atau pembicara.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-location-dot"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Notifikasi Berbasis Lokasi</h4>
+                                            <p>Dapatkan rekomendasi kajian ketika Anda berada di area baru.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-sliders"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Kontrol Penuh</h4>
+                                            <p>Sesuaikan frekuensi dan jenis notifikasi sesuai kebutuhan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features__panel" role="tabpanel" id="panel-akun" aria-labelledby="tab-akun" hidden data-feature-panel="akun">
+                        <div class="features__layout features__layout--split features__layout--reverse">
+                            <div class="features__details">
+                                <h3 class="features__headline">Kelola Akun Lebih Mudah</h3>
+                                <div class="features__grid">
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-id-card"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Profil Personal</h4>
+                                            <p>Ubah foto, biodata, serta minat kajian sesuai preferensi Anda.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-cloud"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Sinkronisasi Perangkat</h4>
+                                            <p>Simpan pengaturan di cloud sehingga tetap sama di perangkat lain.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-lock"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Keamanan Terjamin</h4>
+                                            <p>Gunakan verifikasi dua langkah untuk menjaga akun tetap aman.</p>
+                                        </div>
+                                    </div>
+                                    <div class="features__item">
+                                        <span class="features__icon"><i class="fa-solid fa-language"></i></span>
+                                        <div class="features__item-text">
+                                            <h4>Preferensi Bahasa</h4>
+                                            <p>Pilih bahasa tampilan dan bentuk tanggal yang paling nyaman.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <figure class="features__visual">
+                                <img src="img/sshp5.jpg" alt="Pengaturan akun aplikasi Darazna" loading="lazy" />
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="galeri">
+            <div class="container">
+                <header class="gallery__header">
+                    <h2 class="section-title">Tampilan Aplikasi Dalam Genggaman</h2>
+                    <p class="section-subtitle">Lihat bagaimana Darazna menghadirkan informasi kajian secara rapi dan mudah dibaca melalui beberapa cuplikan layar berikut.</p>
+                </header>
+
+                <div class="gallery__stage">
+                    <button class="gallery__nav gallery__nav--prev" id="galleryPrev" aria-label="Lihat screenshot sebelumnya">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="gallery__viewport" id="galleryViewport">
+                        <ul class="gallery__track">
+                            <li class="gallery__item">
+                                <img src="img/sshp1.jpg" alt="Tampilan beranda aplikasi Darazna" loading="lazy" />
+                            </li>
+                            <li class="gallery__item">
+                                <img src="img/sshp2.jpg" alt="Agenda kajian di aplikasi Darazna" loading="lazy" />
+                            </li>
+                            <li class="gallery__item">
+                                <img src="img/sshp3.jpg" alt="Fitur favorit pada aplikasi Darazna" loading="lazy" />
+                            </li>
+                            <li class="gallery__item">
+                                <img src="img/sshp4.jpg" alt="Notifikasi langsung dari aplikasi Darazna" loading="lazy" />
+                            </li>
+                            <li class="gallery__item">
+                                <img src="img/sshp5.jpg" alt="Pengaturan akun di aplikasi Darazna" loading="lazy" />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="gallery__nav gallery__nav--next" id="galleryNext" aria-label="Lihat screenshot berikutnya">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="download" id="download">
+            <div class="container">
+                <div class="download__content">
+                    <div class="download__text">
+                        <h2 class="section-title section-title--left">Download Darazna</h2>
+                        <p class="download__subtitle">Download gratis dan install sekarang juga. Darazna siap menemani Anda mendapatkan informasi kajian terpercaya dalam satu genggaman.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.darazna.app" class="store-button" target="_blank" rel="noopener">
+                            <span class="store-button__icon"><i class="fa-brands fa-google-play"></i></span>
+                            <div class="store-button__label">
+                                <span>Tersedia di</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                    <figure class="download__visual">
+                        <img src="img/logohero3hp.png" alt="Mockup aplikasi Darazna" loading="lazy" />
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div class="footer__column">
+                <div class="footer__brand">
+                    <img src="img/logoDARAZNA.png" alt="Logo Darazna" class="footer__logo" />
+                </div>
+                <p class="footer__text">Darazna dihadirkan untuk memudahkan kaum muslimin menghadiri majelis ilmu dan belajar Islam di manapun berada.</p>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__title">Tautan</h4>
+                <ul class="footer__links">
+                    <li><a href="#fitur">Fitur Unggulan</a></li>
+                    <li><a href="#galeri">Cuplikan Aplikasi</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+            </div>
+            <div class="footer__column">
+                <h4 class="footer__title">Media Sosial</h4>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/syn_academy?igsh=dmRtcDMwZXUyaXd6" aria-label="Instagram Darazna" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/17F4hrERvT/" aria-label="Facebook Darazna" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/" aria-label="WhatsApp Darazna" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:" aria-label="Email Darazna"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>© Darazna 2025. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
