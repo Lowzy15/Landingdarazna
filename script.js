@@ -8,6 +8,10 @@ const featurePanels = document.querySelectorAll("[data-feature-panel]");
 const galleryViewport = document.getElementById("galleryViewport");
 const galleryTrack = galleryViewport ? galleryViewport.querySelector(".gallery__track") : null;
 let galleryItems = galleryTrack ? galleryTrack.querySelectorAll(".gallery__item") : [];
+let touchStartX = 0;
+let touchStartTime = 0;
+const SWIPE_THRESHOLD = 40;
+const SWIPE_TIME = 600;
 const galleryPrev = document.getElementById("galleryPrev");
 const galleryNext = document.getElementById("galleryNext");
 const heroHighlight = document.getElementById("heroHighlight");
@@ -229,6 +233,26 @@ const bindGalleryControls = () => {
     galleryViewport.addEventListener("scroll", () => {
         window.requestAnimationFrame(updateGalleryNavState);
     });
+
+    galleryViewport.addEventListener("touchstart", (event) => {
+        const touch = event.changedTouches[0];
+        touchStartX = touch.clientX;
+        touchStartTime = Date.now();
+    }, { passive: true });
+
+    galleryViewport.addEventListener("touchend", (event) => {
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - touchStartX;
+        const deltaTime = Date.now() - touchStartTime;
+
+        if (Math.abs(deltaX) > SWIPE_THRESHOLD && deltaTime < SWIPE_TIME) {
+            if (deltaX < 0) {
+                scrollGalleryBy(1);
+            } else {
+                scrollGalleryBy(-1);
+            }
+        }
+    }, { passive: true });
 
     updateGalleryNavState();
 };
