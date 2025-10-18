@@ -10,6 +10,9 @@ const galleryTrack = galleryViewport ? galleryViewport.querySelector(".gallery__
 let galleryItems = galleryTrack ? galleryTrack.querySelectorAll(".gallery__item") : [];
 let touchStartX = 0;
 let touchStartTime = 0;
+let pointerStartX = 0;
+let pointerScrollLeft = 0;
+let isPointerDown = false;
 const SWIPE_THRESHOLD = 40;
 const SWIPE_TIME = 600;
 const galleryPrev = document.getElementById("galleryPrev");
@@ -232,6 +235,50 @@ const bindGalleryControls = () => {
 
     galleryViewport.addEventListener("scroll", () => {
         window.requestAnimationFrame(updateGalleryNavState);
+    });
+
+    const startPointerDrag = (clientX) => {
+        isPointerDown = true;
+        pointerStartX = clientX;
+        pointerScrollLeft = galleryViewport.scrollLeft;
+        galleryViewport.classList.add("is-dragging");
+    };
+
+    const movePointerDrag = (clientX) => {
+        if (!isPointerDown) return;
+        const delta = clientX - pointerStartX;
+        galleryViewport.scrollLeft = pointerScrollLeft - delta;
+    };
+
+    const endPointerDrag = () => {
+        if (!isPointerDown) return;
+        isPointerDown = false;
+        galleryViewport.classList.remove("is-dragging");
+        updateGalleryNavState();
+    };
+
+    galleryViewport.addEventListener("pointerdown", (event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") {
+            galleryViewport.setPointerCapture(event.pointerId);
+            startPointerDrag(event.clientX);
+        }
+    });
+
+    galleryViewport.addEventListener("pointermove", (event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") {
+            movePointerDrag(event.clientX);
+        }
+    });
+
+    galleryViewport.addEventListener("pointerup", (event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") {
+            galleryViewport.releasePointerCapture(event.pointerId);
+            endPointerDrag();
+        }
+    });
+
+    galleryViewport.addEventListener("pointerleave", () => {
+        endPointerDrag();
     });
 
     galleryViewport.addEventListener("touchstart", (event) => {
